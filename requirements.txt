@@ -1,3 +1,4 @@
 https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.31.zip
 time
 random
+Tgcrypto
