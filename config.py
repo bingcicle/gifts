@@ -6,6 +6,11 @@ second_username = "samagem" #писать без @ как в примере
 third_username = "samagem" #писать без @ как в примере
 fourth_username = "samagem" #писать без @ как в примере
 
+tg_number_for_parse_acc = "+111111111"
+tg_number_for_buy_acc = "+11111111111"
+
+max_supply = 200000
+
 time_sleep = 0.1 #задержка между циклом отправки подарков
 
 acc_for_notification = "samagem" #на этот ак будет приходить сообщение, в случае выхода новых подарков
