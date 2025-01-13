@@ -2,6 +2,7 @@ import time
 from pyrogram import Client
 import random
 from config import num_of_users, first_username, second_username, third_username, fourth_username, time_sleep, acc_for_notification, mcap, stars_for_each, parsing_cooldown, max_supply, tg_number_for_parse_acc, tg_number_for_buy_acc
+from loguru import logger
 
 # API ключи, можно взять на https://my.telegram.org/auth
 
@@ -90,5 +91,7 @@ with Client("parsing_acc", parsing_acc_api_id, parsing_acc_api_hash, phone_numbe
             time.sleep(parsing_cooldown)
             current_gifts = app.get_star_gifts()
             extract_gift_info(current_gifts)
+            current_time = time.strftime("%H:%M:%S", time.localtime())
+            logger.success(f'Парсинг проводится успешно {current_time}')
         except Exception as e:
             pass
