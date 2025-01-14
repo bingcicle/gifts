@@ -29,36 +29,33 @@ gift_list = [5879737836550226478, 5882125812596999035, 5882252952218894938, 5859
 def buy_nft(num_of_gifts, gif_id):
     with Client("acc_with_stars", acc_with_stars_api_id, acc_with_stars_api_hash) as app2:
         for i in range(num_of_gifts):
-            if num_of_users == 1:
-                time.sleep(time_sleep)
-                app2.send_star_gift(first_username, star_gift_id=gif_id)
-            if num_of_users == 2:
-                time.sleep(time_sleep)
-                number_rundom = random.randint(1, 2)
-                if number_rundom == 1:
+            try:
+                if num_of_users == 1:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(first_username, star_gift_id=gif_id)
-                if number_rundom == 2:
-                    app2.send_star_gift(second_username, star_gift_id=gif_id)
-            if num_of_users == 3:
-                time.sleep(time_sleep)
-                number_rundom = random.randint(1, 3)
-                if number_rundom == 1:
+                if num_of_users == 2:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(first_username, star_gift_id=gif_id)
-                if number_rundom == 2:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(second_username, star_gift_id=gif_id)
-                if number_rundom == 3:
+                if num_of_users == 3:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
                     app2.send_star_gift(third_username, star_gift_id=gif_id)
-            if num_of_users == 4:
-                time.sleep(time_sleep)
-                number_rundom = random.randint(1, 4)
-                if number_rundom == 1:
+                if num_of_users == 4:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(first_username, star_gift_id=gif_id)
-                if number_rundom == 2:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(second_username, star_gift_id=gif_id)
-                if number_rundom == 3:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(third_username, star_gift_id=gif_id)
-                if number_rundom == 4:
+                    time.sleep(time_sleep)
                     app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+            except Exception as e:
+                logger.error(f"подарок не был отправлен, повторяем попытку, ошибка:{e}")
 
 # Функція для витягання id та emoji з даних
 def extract_gift_info(gifts):
@@ -71,8 +68,16 @@ def extract_gift_info(gifts):
                 app.send_message(acc_for_notification, f"{gift.id, gift.sticker.emoji, market_cup}")
                 if market_cup <= mcap:
                     if int(gift.total_amount) <= int(max_supply):
-                        num_of_gifts = round(stars_for_each/gift.price)
-                        buy_nft(int(num_of_gifts), gift.id)
+                        num_of_gifts_false = round(stars_for_each/gift.price)
+                        remainder = num_of_gifts_false % num_of_users
+                        if remainder == 0:
+                            nearest_number = num_of_gifts_false  # Якщо число вже ділиться націло
+                        elif remainder <= num_of_users / 2:
+                            nearest_number = num_of_gifts_false - remainder  # Округлення вниз
+                        else:
+                            nearest_number = num_of_gifts_false + (num_of_users - remainder)  # Округлення вгору
+                        gifts_per_acc = nearest_number/num_of_users
+                        buy_nft(int(gifts_per_acc), gift.id)
 
 
 # Функція для знаходження нових подарунків
