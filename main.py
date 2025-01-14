@@ -1,7 +1,7 @@
 import time
 from pyrogram import Client
 import random
-from config import num_of_users, first_username, second_username, third_username, fourth_username, time_sleep, acc_for_notification, mcap, stars_for_each, parsing_cooldown, max_supply, tg_number_for_parse_acc, tg_number_for_buy_acc
+from config import num_of_users, first_username, second_username, third_username, fourth_username, fifth_username, sixth_username, seventh_username, eighth_username, ninth_username, tenth_username, time_sleep, acc_for_notification, mcap, stars_for_each, parsing_cooldown, max_supply, tg_number_for_parse_acc, tg_number_for_buy_acc
 from loguru import logger
 
 # API ключи, можно взять на https://my.telegram.org/auth
@@ -28,6 +28,7 @@ gift_list = [5879737836550226478, 5882125812596999035, 5882252952218894938, 5859
 
 def buy_nft(num_of_gifts, gif_id):
     with Client("acc_with_stars", acc_with_stars_api_id, acc_with_stars_api_hash) as app2:
+        time.sleep(3)
         for i in range(num_of_gifts):
             try:
                 if num_of_users == 1:
@@ -54,6 +55,103 @@ def buy_nft(num_of_gifts, gif_id):
                     app2.send_star_gift(third_username, star_gift_id=gif_id)
                     time.sleep(time_sleep)
                     app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                if num_of_users == 5:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                if num_of_users == 6:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(sixth_username, star_gift_id=gif_id)
+                if num_of_users == 7:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(sixth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(seventh_username, star_gift_id=gif_id)
+                if num_of_users == 8:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(sixth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(seventh_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(eighth_username, star_gift_id=gif_id)
+                if num_of_users == 9:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(sixth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(seventh_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(eighth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(ninth_username, star_gift_id=gif_id)
+                if num_of_users == 10:
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(first_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(second_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(third_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fourth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(fifth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(sixth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(seventh_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(eighth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(ninth_username, star_gift_id=gif_id)
+                    time.sleep(time_sleep)
+                    app2.send_star_gift(tenth_username, star_gift_id=gif_id)
+
             except Exception as e:
                 logger.error(f"подарок не был отправлен, повторяем попытку, ошибка:{e}")
 
@@ -99,4 +197,4 @@ with Client("parsing_acc", parsing_acc_api_id, parsing_acc_api_hash, phone_numbe
             current_time = time.strftime("%H:%M:%S", time.localtime())
             logger.success(f'Парсинг проводится успешно {current_time}')
         except Exception as e:
-            pass
+            logger.error(f"ошибка в главном модуле:{e}")
